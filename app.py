@@ -23,11 +23,11 @@ st.markdown(
 
 
 with st.form(key="user_inputs"):
-    city = st.text_input("Enter your district name:", "Noida")
+    city = st.text_input("Enter your Location:", "Noida")
     pesticides = st.text_input("Enter pesticide usage (in tonnes):", "21211")
     item = st.selectbox("Select your crop", ['Cassava', 'Maize', 'Plantains and others', 'Potatoes', 'Rice, paddy', 'Sorghum', 'Soybeans', 'Sweet potatoes', 'Wheat', 'Yams'])
     predict_button = st.form_submit_button("Predict")
-
+    credit_score = st.text_input("Enter your Credit score: ")
 
 average_yields = {
     'Cassava': 255000,
@@ -58,12 +58,18 @@ if predict_button:
     average_yield = average_yields[item]
     efficiency = min(round((predicted_yield / average_yield) * 100), 90)
 
+    if credit_score < 550 :
+        efficiency = 0 
+
     st.write(f"Predicted yield for {item} in {city} with {pesticides} tonnes of pesticides: {predicted_yield} hg/ha")
     st.write(f"Efficiency (compared to average yield of {item} in India): {efficiency}%")
 
 
     st.write("Efficiency:")
     st.progress(efficiency / 100)
+
+    if credit_score < 550 :
+        st.write("Your Credit Score is too low you are not applicable for loan approval")
 
 
     if efficiency >= 80:
