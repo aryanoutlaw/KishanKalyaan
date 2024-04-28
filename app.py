@@ -2,7 +2,7 @@ import streamlit as st
 from prediction import predict
 
 
-st.set_page_config(page_title="Kishan Kalyaan 🌦️", page_icon=":seedling:")
+st.set_page_config(page_title="Krishi Kalyaan 🌦️", page_icon=":seedling:")
 
 
 st.title("🌱 Kishan Kalyaan 🌦️")
