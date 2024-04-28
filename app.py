@@ -58,7 +58,7 @@ if predict_button:
     average_yield = average_yields[item]
     efficiency = min(round((predicted_yield / average_yield) * 100), 90)
 
-    st.write(f"Predicted yield for {item} in {city} with {pesticides} tonnes of pesticides: {predicted_yield}")
+    st.write(f"Predicted yield for {item} in {city} with {pesticides} tonnes of pesticides: {predicted_yield} hg/ha")
     st.write(f"Efficiency (compared to average yield of {item} in India): {efficiency}%")
 
 
