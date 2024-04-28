@@ -5,8 +5,8 @@ from prediction import predict
 st.set_page_config(page_title="Krishi Kalyaan 🌦️", page_icon=":seedling:")
 
 
-st.title("🌱 Kishan Kalyaan 🌦️")
-st.markdown("Welcome to Kishan Kalyaan! This tool helps farmers predict crop yields based on various factors including location, crop selection, pesticide usage, average rainfall, and average temperature. Simply enter your district name, pesticide usage, and select the crop you're interested in, and click Predict to get the results.")
+st.title("🌱 Krishi Kalyaan 🌦️")
+st.markdown("Welcome to Krishi Kalyaan! This tool helps farmers predict crop yields based on various factors including location, crop selection, pesticide usage, average rainfall, and average temperature. Simply enter your district name, pesticide usage, and select the crop you're interested in, and click Predict to get the results.")
 st.markdown("---")
 
 
