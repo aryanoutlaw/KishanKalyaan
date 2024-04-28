@@ -26,8 +26,9 @@ with st.form(key="user_inputs"):
     city = st.text_input("Enter your Location:", "Noida")
     pesticides = st.text_input("Enter pesticide usage (in tonnes):", "21211")
     item = st.selectbox("Select your crop", ['Cassava', 'Maize', 'Plantains and others', 'Potatoes', 'Rice, paddy', 'Sorghum', 'Soybeans', 'Sweet potatoes', 'Wheat', 'Yams'])
-    predict_button = st.form_submit_button("Predict")
     credit_score = st.text_input("Enter your Credit score: ")
+    predict_button = st.form_submit_button("Predict")
+    
 
 average_yields = {
     'Cassava': 255000,
