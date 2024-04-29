@@ -69,7 +69,7 @@ if predict_button:
     st.write("Efficiency:")
     st.progress(efficiency / 100)
 
-    if credit_score < 550 :
+    if int(credit_score) < 550 :
         st.write("Your Credit Score is too low you are not applicable for loan approval")
 
 
