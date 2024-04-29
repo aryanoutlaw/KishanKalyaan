@@ -26,7 +26,7 @@ with st.form(key="user_inputs"):
     city = st.text_input("Enter your Location:", "Noida")
     pesticides = st.text_input("Enter pesticide usage (in tonnes):", "21211")
     item = st.selectbox("Select your crop", ['Cassava', 'Maize', 'Plantains and others', 'Potatoes', 'Rice, paddy', 'Sorghum', 'Soybeans', 'Sweet potatoes', 'Wheat', 'Yams'])
-    credit_score = st.text_input("Enter your Credit score: ")
+    credit_score = st.text_input("Enter your Credit score: ", "720")
     predict_button = st.form_submit_button("Predict")
     
 
@@ -59,7 +59,7 @@ if predict_button:
     average_yield = average_yields[item]
     efficiency = min(round((predicted_yield / average_yield) * 100), 90)
 
-    if credit_score < 550 :
+    if int(credit_score) < 550 :
         efficiency = 0 
 
     st.write(f"Predicted yield for {item} in {city} with {pesticides} tonnes of pesticides: {predicted_yield} hg/ha")
