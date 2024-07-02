@@ -23,10 +23,20 @@ st.markdown(
 
 
 with st.form(key="user_inputs"):
-    city = st.text_input("Enter your Location:", "Noida")
-    pesticides = st.text_input("Enter pesticide usage (in tonnes):", "21211")
     item = st.selectbox("Select your crop", ['Cassava', 'Maize', 'Plantains and others', 'Potatoes', 'Rice, paddy', 'Sorghum', 'Soybeans', 'Sweet potatoes', 'Wheat', 'Yams'])
+    season = st.selectbox("Select the Season", ["Summer", "Winter", "Autumn", "Spring"]) #new
+    city = st.text_input("Enter your Location:", "Raebareli")
+    area = st.text_input("Enter your area of land") #new
+    irrigation = st.selectbox("Do you have irrigation facility?",["Yes","No"])
+    
+    sales_current = st.text_input("Sales of the Crop - Current Year: ", "Sales in current year (profit)") #new
+    pesticides = st.text_input("Sales of the Crop - Previous Year:", "Sales in previous year (profit)") #pesticides updated
+    
+    
+    income = st.text_input("Enter any other income source (if any):") #new
+    pattern = st.text_input("Crop Pattern Followed in That Area:")
     credit_score = st.text_input("Enter your Credit score: ", "720")
+    lease = st.selectbox("Whether the Land is on Lease or Own:", ["Owned","Lease"]) #new
     predict_button = st.form_submit_button("Predict")
     
 
