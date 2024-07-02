@@ -23,22 +23,25 @@ st.markdown(
 
 
 with st.form(key="user_inputs"):
-    item = st.selectbox("Select your crop", ['Cassava', 'Maize', 'Plantains and others', 'Potatoes', 'Rice, paddy', 'Sorghum', 'Soybeans', 'Sweet potatoes', 'Wheat', 'Yams'])
-    season = st.selectbox("Select the Season", ["Summer", "Winter", "Autumn", "Spring"]) #new
+    season = st.selectbox("Select the Season : ", ["Summer", "Winter", "Autumn", "Spring"]) #new
+    item = st.selectbox("Select your crop :", ['Cassava', 'Maize', 'Plantains and others', 'Potatoes', 'Rice, paddy', 'Sorghum', 'Soybeans', 'Sweet potatoes', 'Wheat', 'Yams'])
     city = st.text_input("Enter your Location:", "Raebareli")
-    area = st.text_input("Enter your area of land") #new
     irrigation = st.selectbox("Do you have irrigation facility?",["Yes","No"])
     
-    sales_current = st.text_input("Sales of the Crop - Current Year: ", "Sales in current year (profit)") #new
-    pesticides = st.text_input("Sales of the Crop - Previous Year:", "Sales in previous year (profit)") #pesticides updated
+    lease = st.selectbox("Whether the Land is on Lease or Own :", ["Owned","Lease"]) #new
+    area = st.text_input("Enter your area of land : ") #new
     
+    sales_current = st.text_input("Sales of the Crop - Current Year : ", "Sales in current year (profit)") #new
+    pesticides = st.text_input("Sales of the Crop - Previous Year :", "Sales in previous year (profit)") #pesticides updated
+      
+    income = st.text_input("Enter any other income source (if any) :", "Job Name") #new
+    credit_score = st.text_input("Enter your Credit score :", "720") 
     
-    income = st.text_input("Enter any other income source (if any):") #new
-    pattern = st.text_input("Crop Pattern Followed in That Area:")
-    credit_score = st.text_input("Enter your Credit score: ", "720")
-    lease = st.selectbox("Whether the Land is on Lease or Own:", ["Owned","Lease"]) #new
+    movable = st.text_input("Enter Movable Assests :") #new
+    immovable = st.text_input("Enter Immovable Assests") #new
+    
+    pattern = st.text_input("Crop Pattern Followed in That Area :")
     predict_button = st.form_submit_button("Predict")
-    
 
 average_yields = {
     'Cassava': 255000,
@@ -72,7 +75,7 @@ if predict_button:
     if int(credit_score) < 550 :
         efficiency = 0 
 
-    st.write(f"Predicted yield for {item} in {city} with {pesticides} tonnes of pesticides: {predicted_yield} hg/ha")
+    # st.write(f"Predicted yield for {item} in {city} is : {predicted_yield} hg/ha")
     st.write(f"Efficiency (compared to average yield of {item} in India): {efficiency}%")
 
 
