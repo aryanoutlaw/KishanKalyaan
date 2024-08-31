@@ -2,7 +2,7 @@ import streamlit as st
 from prediction import predict
 
 
-st.set_page_config(page_title="Krishi Kalyaan 🌦️", page_icon=":seedling:")
+st.set_page_config(page_title="Jalvyuh 🌦️", page_icon=":seedling:")
 
 
 st.title("🌱Jalvyuh🌦️")
@@ -68,9 +68,6 @@ if predict_button:
 
     st.write("Efficiency:")
     st.progress(efficiency / 100)
-
-    # if int(credit_score) < 550 :
-    #     st.write("Your Credit Score is too low you are not applicable for loan approval")
 
 
     if efficiency >= 80:
