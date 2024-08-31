@@ -59,8 +59,8 @@ if predict_button:
     average_yield = average_yields[item]
     efficiency = min(round((predicted_yield / average_yield) * 100), 90)
 
-    if int(credit_score) < 550 :
-        efficiency = 0 
+    # if int(credit_score) < 550 :
+    #     efficiency = 0 
 
     # st.write(f"Predicted yield for {item} in {city} is : {predicted_yield} hg/ha")
     st.write(f"Efficiency (compared to average yield of {item} in India): {efficiency}%")
